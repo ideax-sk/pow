@@ -269,7 +269,7 @@ defmodule Pow.Phoenix.Router do
     length(exprs.binding) == length(exprs(route, forwards).binding)
   end
 
-  def exprs(route, forwards), to: Phoenix.Router.Route.exprs(route, forwards)
+  defp exprs(route, forwards), to: Phoenix.Router.Route.exprs(route, forwards)
 
   defmacro pow_route(verb, path, plug, plug_opts, options \\ []) do
     quote location: :keep do
